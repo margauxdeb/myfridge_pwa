@@ -1,0 +1,132 @@
+{
+  "stock": [
+    {
+      "name": "Placard cuisine",
+      "id": 1
+    },
+    {
+      "name": "Frigo",
+      "id": 2
+    }
+  ],
+  "shopping": [
+    {
+      "name": "Anniversaire Carole",
+      "id": 1
+    },
+    {
+      "name": "Auchan lundi",
+      "id": 2
+    },
+    {
+      "name": "Crémaillère",
+      "id": 3
+    }
+  ],
+  "products": [
+    {
+      "name": "Lait",
+      "barcode": "123456789",
+      "expiry": "2018-03-31T18:19:03.000Z",
+      "idStock": 0,
+      "idShopping": 2,
+      "id": 1
+    },
+    {
+      "name": "Beurre",
+      "barcode": "123789456",
+      "expiry": "2018-05-22T22:00:00.000Z",
+      "idStock": 2,
+      "idShopping": 0,
+      "id": 2
+    },
+    {
+      "name": "Sablé LU",
+      "barcode": "456789123",
+      "expiry": "2018-06-21T22:00:00.000Z",
+      "idStock": 1,
+      "idShopping": 0,
+      "id": 3
+    },
+    {
+      "name": "Farine",
+      "barcode": "654832971",
+      "expiry": "2018-09-12T22:00:00.000Z",
+      "idStock": 0,
+      "idShopping": 3,
+      "id": 4
+    },
+    {
+      "name": "Eau Evian",
+      "barcode": "689573241",
+      "expiry": "2021-03-19T19:19:03.000Z",
+      "idStock": 1,
+      "idShopping": 0,
+      "id": 5
+    },
+    {
+      "name": "Pain aux chocolat",
+      "barcode": "578461293",
+      "expiry": "2018-04-14T22:00:00.000Z",
+      "idStock": 0,
+      "idShopping": 2,
+      "id": 6
+    },
+    {
+      "name": "Jambon",
+      "barcode": "478593261",
+      "expiry": "2018-04-29T22:00:00.000Z",
+      "idStock": 0,
+      "idShopping": 2,
+      "id": 7
+    },
+    {
+      "name": "Coca Cola",
+      "barcode": "345869721",
+      "expiry": "2018-04-28T22:00:00.000Z",
+      "idStock": 0,
+      "idShopping": 3,
+      "id": 8
+    },
+    {
+      "name": "Gâteau chocolat praliné",
+      "barcode": "986574321",
+      "expiry": "2018-04-07T22:00:00.000Z",
+      "idStock": 0,
+      "idShopping": 1,
+      "id": 9
+    },
+    {
+      "name": "Lait",
+      "barcode": "123456789",
+      "expiry": "2018-04-05T07:02:48.000Z",
+      "idStock": 2,
+      "idShopping": 0,
+      "id": 10
+    },
+    {
+      "name": "pomme",
+      "barcode": "12345678",
+      "expiry": "2018-04-14T08:31:28.000Z",
+      "idStock": 0,
+      "idShopping": 3,
+      "id": 11
+    },
+    {
+      "name": "Coca Cola Cherry",
+      "barcode": "345869723",
+      "expiry": "2018-04-11T08:47:52.000Z",
+      "idStock": 2,
+      "idShopping": 0,
+      "id": 12
+    },
+    {
+      "name": "poire",
+      "barcode": "123445555",
+      "expiry": "2018-04-02T09:08:22.000Z",
+      "idStock": 2,
+      "idShopping": 0,
+      "id": 13
+    }
+  ]
+}

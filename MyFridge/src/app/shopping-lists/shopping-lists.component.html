@@ -1,0 +1,45 @@
+<div class="container">
+   
+  <!-- Allow to create a new shopping list -->
+  <div class="newShoppingList">
+    <h6>Créer une liste de course</h6>
+    <div class="input-group">
+      <input class="form-control"
+        #shoppingName
+        aria-describedby="basic-addon1"
+        placeholder="Saisissez le nom ici"
+      />
+      <div class="input-group-append">
+        <button type="submit" name="addShop"
+          class="btn btn-outline-primary"
+          (click)="addShopping(shoppingName.value); shoppingName.value=''"
+        >
+          Créer
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Allow to search a shopping list -->
+  <app-shopping-search></app-shopping-search>
+  
+  <!-- Display all shopping lists -->
+  <h4 class="text-center">Listes de courses</h4>
+  <div *ngFor="let shopping of shoppings">
+    <div class="input-group">
+      <a class="form-control shoppingLink"
+        routerLink="/shopping/{{shopping.id}}"
+      >
+        {{shopping.name}}
+      </a>
+      <div class="input-group-append">
+        <button (click)="deleteShopping(shopping)" name="deleteShop"
+          class="btn btn-outline-secondary"
+        >
+          Supprimer
+        </button>
+      </div>
+    </div>
+  </div>
+  
+</div>

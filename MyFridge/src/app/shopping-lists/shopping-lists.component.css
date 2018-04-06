@@ -1,0 +1,19 @@
+.text-center {
+  margin-top: 30px;
+}
+
+.shoppingLink {
+  text-decoration: none;
+}
+
+.input-group {
+  margin-top: 10px;
+}
+
+.shoppingLink:hover, .shoppingLink:focus {
+  background-color: lightsteelblue;
+}
+
+.newShoppingList {
+  margin-top: 20px;
+}

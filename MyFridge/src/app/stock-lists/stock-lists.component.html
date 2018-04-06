@@ -1,0 +1,45 @@
+<div class="container">
+
+  <!-- Allow to create a new shopping list -->
+  <div class="newStockList">
+    <h6>Créer une liste de stock</h6>
+    <div class="input-group">
+      <input class="form-control"
+        #stockName
+        aria-describedby="basic-addon1"
+        placeholder="Saisissez le nom ici"
+      />
+      <div class="input-group-append">
+        <button type="button" name="creer"
+          class="btn btn-outline-primary" 
+          (click)="addStock(stockName.value); stockName.value=''"
+        >
+          Créer
+        </button>
+      </div>
+    </div> 
+  </div>
+
+  <!-- Stock list searching zone -->
+  <app-stock-search></app-stock-search> 
+  
+  <!-- Listing all stocks lists -->
+  <h4 class="text-center">Listes des stocks</h4>
+  <div *ngFor="let stock of stocks">
+    <div class="input-group">
+      <a class="form-control stockLink" 
+        routerLink="/stock/{{stock.id}}"
+      >
+        {{stock.name}}
+      </a>
+      <div class="input-group-append">
+        <button (click)="deleteStock(stock)" name="supprimer"
+          class="btn btn-outline-secondary" 
+        >
+          Supprimer
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

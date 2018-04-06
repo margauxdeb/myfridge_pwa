@@ -1,0 +1,11 @@
+#search-component {
+  margin-top: 20px;
+}
+
+.list-group-item:hover, .list-group-item:focus {
+  background-color: lightsteelblue;
+}
+
+#linkProduct {
+  cursor: pointer;
+}

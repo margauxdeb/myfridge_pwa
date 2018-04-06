@@ -1,0 +1,19 @@
+.text-center {
+  margin-top: 30px;
+}
+
+.stockLink {
+  text-decoration: none;
+}
+
+.input-group {
+  margin-top: 10px;
+}
+
+.stockLink:hover, .stockLink:focus {
+  background-color: lightsteelblue;
+}
+
+.newStockList {
+  margin-top: 20px;
+}

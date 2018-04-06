@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <!-- App title -->
+  <a class="navbar-brand" routerLink="/">
+    <img src="/assets/fridge.png" 
+      width="30" height="30" 
+      class="d-inline-block align-top"
+	  alt="fridge image">
+    {{title}}
+  </a>
+
+  <!-- Hamburger button to display the menu if the viewport is small -->
+  <button class="navbar-toggler" name="nav" type="button" 
+    (click)="isCollapsed = !isCollapsed"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Collapsing menu to show the links -->
+  <div (collapsed)="collapsed($event)"
+    (expanded)="expanded($event)"
+    [collapse]="isCollapsed"
+    class="collapse navbar-collapse"
+  >
+    <!-- Routes for the different pages -->
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="/scan">Enregistrer un produit</a>
+      <a class="nav-item nav-link" routerLink="/stock">Listes des stocks</a>
+      <a class="nav-item nav-link" routerLink="/shopping">Listes de courses</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Display the pages related to the routes -->
+<router-outlet></router-outlet>

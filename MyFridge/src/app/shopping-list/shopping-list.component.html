@@ -1,0 +1,81 @@
+<div *ngIf="shopping">
+ 
+  <div class="container">
+
+    <h4 class="text-center">Liste {{ shopping.name | uppercase }}</h4>
+
+    <!-- Change the shopping list name -->
+    <h6 class="editName">Changer le nom de la liste</h6>
+    <div class="input-group">
+      <input class="form-control"
+        [(ngModel)]="shopping.name" 
+        placeholder="Nom de la liste"
+      />
+      <div class="input-group-append">
+        <button type="button"
+          class="btn btn-outline-primary"  
+          (click)="updateShopping()" name="sauver"
+        >
+          Sauvegarder
+        </button>
+      </div>
+    </div>
+
+    <!-- Listing all shopping lists products -->
+    <h5 class="products">Produits de la liste</h5>
+    <div *ngFor="let product of products">
+      <div class="input-group">
+        <div class="form-control">
+          <b>{{ product.name }}</b><br/>
+          <i>Code barre : {{ product.barcode }}</i>
+        </div>
+        <div class="input-group-append">
+          <button type="button" name="supp"
+            class="btn btn-outline-secondary" 
+            (click)="modalAction(template, product)"
+          >
+            Supprimer
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-info goBack" (click)="goBack()">
+      Retourner aux listes
+    </button>
+
+    <!-- Modal that allow to delete and move products to shopping list -->
+    <ng-template #template>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Supprimer un produit</h4>
+        <button type="button" name="close"
+          class="close pull-right" 
+          aria-label="Close" 
+          (click)="modalRef.hide()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <p>
+            Laissez ce champ vide pour simplement supprimer le produit.<br/>
+            Choisissez une liste de course afin de supprimer ce produit ET l'ajouter à la liste choisie.
+          </p>
+        <select class="custom-select form-control"
+          [(ngModel)]="shoppingListSelected"
+        >
+          <option *ngFor="let shopping of shoppings">
+            {{ shopping.name }}
+          </option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" name="confirme"
+          (click)="deleteMoveProduct(currentProduct, shoppingListSelected)">
+          Confirmer
+        </button>
+      </div>
+    </ng-template>
+
+  </div>
+</div>

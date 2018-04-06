@@ -1,0 +1,83 @@
+<div class="container">
+
+  <!-- Zone to search an existing product -->
+  <div id="search-component">
+    <h6 class="text-center">
+      <i>Recherchez un produit déjà existant</i>
+    </h6>
+    <input class="form-control" 
+      #searchBox id="search-box" 
+      (keyup)="search(searchBox.value)" 
+      placeholder="Recherchez ici"
+    />
+    <!-- Display the result list -->
+    <ul class="search-result list-group">
+      <li *ngFor="let product of products$ | async"
+        class="list-group-item" 
+      >
+        <!-- Click on a result will add information in the form below  -->
+        <div id="linkProduct" 
+          (click)="sendProductData(product); searchBox.value = '';"
+        >
+          <b>{{product.name}}</b> - <i>Code barre : {{product.barcode}}</i>
+        </div>
+      </li>
+    </ul>
+  </div>
+    
+  <!-- Form to add a product to a list when all fields are completed -->
+  <div id="form">
+    <h6 class="text-center">
+      <i>Formulaire d'enregistrement d'un produit<br/>(déjà existant ou non)</i>
+    </h6>
+    <!-- Form fields -->
+    <form [formGroup]="productForm" 
+      (ngSubmit)="createProduct()"
+    >
+      <div class="form-group">
+        <label>Nom :</label>
+        <input class="form-control" 
+          formControlName="name" 
+          [(ngModel)]="productName"
+        >
+      </div> 
+      <div class="form-group">
+        <label>Date de péremption :</label>
+        <input class="form-control" 
+          bsDatepicker
+          [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }"
+          formControlName="expiry"
+        >
+      </div>
+      <div class="form-group">
+        <label class="center-block">Code barre :</label>
+        <input class="form-control" 
+          formControlName="barcode" 
+          [(ngModel)]="barcodeValue"
+        >  
+      </div>
+      <div class="form-group">
+        <label class="center-block">Choisir une liste de stockage :</label>
+        <select class="custom-select form-control"
+          [formGroup]="productForm"
+          [(ngModel)]="stockListSelected"
+          [ngModelOptions]="{standalone: true}"
+        >
+          <option *ngFor="let stock of stocks" [ngValue]="stock">
+            {{ stock.name }}
+          </option>
+        </select>
+      </div>    
+      <div class="form-row text-center">
+        <div class="col-12">
+          <button class="btn btn-lg btn-primary"
+            [disabled]="productForm.invalid" 
+            type="submit" name="enregistrer"
+          >
+            Enregistrer
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

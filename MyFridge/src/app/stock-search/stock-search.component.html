@@ -1,0 +1,26 @@
+<div id="search-component">
+
+  <h6>Rechercher une liste</h6>
+
+  <!-- Search input for a stock list -->
+  <input class="form-control"
+    id="search-box" 
+    #searchBox 
+    (keyup)="search(searchBox.value)" 
+    placeholder="Recherchez ici"
+  />
+
+  <!-- Display results from the query -->
+  <ul class="search-result list-group">
+    <li *ngFor="let stock of stocks$ | async"
+      class="list-group-item"
+    >
+      <div id="linkProduct" 
+        routerLink="/stock/{{stock.id}}"
+      >
+        {{stock.name}}
+      </div>
+    </li>
+  </ul>
+
+</div>
